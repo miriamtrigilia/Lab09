@@ -11,7 +11,16 @@ public class TestDAO {
 
 		BordersDAO dao = new BordersDAO();
 
-		System.out.println("Lista di tutte le nazioni:");
-		List<Country> countries = dao.loadAllCountries();
+		System.out.println("Lista di tutte le nazioni fino all'anno specificato:");
+		List<Country> countries = dao.getCountryByYear(1816);
+		System.out.println(countries+"\n"+countries.size());
+		
+		System.out.println();
+		
+		System.out.println("Lista di tutti i confini fino all'anno:");
+		List<Border> confini = dao.getCountryPairs(1816);
+		System.out.println(confini+"\n"+confini.size());
+		
+		dao.loadAllCountries();
 	}
 }
